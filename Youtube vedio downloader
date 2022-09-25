@@ -1,0 +1,18 @@
+import pytube
+
+link=input("enter link")
+v=pytube.YouTube(link)
+
+# st=v.streams.filter(progressive=True)
+st=v.streams
+
+lis=list(enumerate(st))
+for i in lis:
+    print(i)
+
+selectstream=int(input("enter"))
+
+st[selectstream].download()
+
+print("downloaded")
+
